@@ -1,15 +1,15 @@
-# OSS-Webpack-Plugin
+# oss-db-webpack-plugin
 
 阿里云 OSS 上传工具 Webpack 插件
 
 ## 安装
 
 ```bash
-yarn add oss-webpack-plugin -D
+yarn add oss-db-webpack-plugin -D
 ```
 
 ```bash
-npm install oss-webpack-plugin -D
+npm install oss-db-webpack-plugin -D
 ```
 
 ## 使用
@@ -18,15 +18,15 @@ npm install oss-webpack-plugin -D
 const path = require('path')
 
 // ES
-import OSSWebpackPlugin from 'oss-webpack-plugin'
+import OSSWebpackPlugin from 'oss-db-webpack-plugin'
 
 // JS
-const OSSWebpackPlugin = require('oss-webpack-plugin').default
+const OSSWebpackPlugin = require('oss-db-webpack-plugin').default
 
 module.exports = {
   output: {
     path: path.join(__dirname, './dist'),
-    publicPath: '/oss-webpack-plugin'
+    publicPath: '/oss-db-webpack-plugin'
   },
   plugins: [new OSSWebpackPlugin()]
 }
