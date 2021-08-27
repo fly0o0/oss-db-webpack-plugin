@@ -1,0 +1,55 @@
+{
+  "name": "oss-db-webpack-plugin",
+  "version": "1.0.0",
+  "description": "oss for webpack",
+  "main": "src/index.js",
+  "bin": {
+    "oss-db-webpack-plugin": "./src/index.js"
+  },
+  "scripts": {
+    "demo": "webpack --config ./demo/webpack.config.js",
+    "pub": "npm run clean && npm run eslint && node ./scripts/pub.js",
+    "clean": "rm -rf lib"
+  },
+  "license": "ISC",
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged",
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  },
+  "lint-staged": {
+    "*.{js}": [
+      "cross-env NODE_ENV=prod eslint",
+      "git add"
+    ],
+    "*.{json}": [
+      "prettier --write",
+      "git add"
+    ]
+  },
+  "files": [
+    "lib"
+  ],
+  "devDependencies": {
+    "@commitlint/config-conventional": "^8.3.4",
+    "commitlint": "^8.3.5",
+    "eslint": "^6.8.0",
+    "eslint-config-standard": "^14.1.1",
+    "eslint-plugin-import": "^2.20.2",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-standard": "^4.0.1",
+    "husky": "^4.2.3",
+    "lint-staged": "^10.0.10",
+    "prettier": "^2.0.2",
+    "webpack": "^4.42.1",
+    "webpack-cli": "^3.3.11"
+  },
+  "dependencies": {
+    "chalk": "^3.0.0",
+    "consola": "^2.11.3",
+    "oss-db-node": "^1.0.3",
+    "progress": "^2.0.3"
+  }
+}
