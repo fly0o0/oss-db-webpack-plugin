@@ -8,7 +8,7 @@
   },
   "scripts": {
     "demo": "webpack --config ./demo/webpack.config.js",
-    "pub": "npm run clean && npm run eslint && node ./scripts/pub.js",
+    "pub": "npm run clean && node ./scripts/pub.js",
     "clean": "rm -rf lib"
   },
   "license": "ISC",
